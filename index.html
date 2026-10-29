@@ -1,0 +1,337 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fatima Zahra Oussous — Computer Science student, software developer and technology enthusiast.">
+<title>Fatima Zahra Oussous | Portfolio</title>
+<style>
+:root {
+  --blue:#2d47ff; --coral:#ff654f; --yellow:#ffe66d;
+  --cream:#fff9ed; --ink:#29202e; --lilac:#e3d7ff;
+  --sky:#dce6ff; --muted:#625b69;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);
+font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;
+padding:22px 0;border-bottom:2px solid var(--ink)}
+.brand{font-size:1.5rem;font-weight:1000;letter-spacing:-2px}
+.brand span{color:var(--coral)}
+.navlinks{display:flex;gap:22px;font-size:.85rem;font-weight:800}
+.navlinks a:hover{color:var(--blue)}
+.hero{background:var(--blue);color:var(--cream);padding:75px 0;
+border-bottom:12px solid var(--coral);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.5fr .8fr;gap:45px;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:900}
+.hero .eyebrow{color:var(--yellow)}
+h1{font-size:clamp(3.3rem,8vw,7rem);line-height:.91;
+letter-spacing:-.075em;margin:25px 0;font-weight:1000}
+h1 em{font-style:normal;color:var(--ink);background:var(--yellow);
+padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lede{font-size:1.08rem;max-width:650px;color:#e9eaff}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-block;padding:12px 18px;border-radius:50px;
+font-weight:900;font-size:.85rem;background:var(--yellow);color:var(--ink)}
+.btn.alt{background:var(--cream)}
+.btn:hover,.project-link:hover{transform:translateY(-2px)}
+.profile{background:var(--yellow);color:var(--ink);padding:26px;
+box-shadow:10px 10px 0 var(--coral);transform:rotate(1deg)}
+.monogram{width:94px;height:94px;border-radius:50%;background:var(--ink);
+color:var(--yellow);display:grid;place-items:center;font-size:2rem;
+font-weight:1000;margin-bottom:20px}
+.profile h2{font-size:1.35rem;line-height:1.1;margin:0 0 8px}
+.profile p{margin:0;font-size:.9rem}
+.facts{border-top:1px solid #d5c54e;margin-top:18px;padding-top:15px}
+.facts div{margin:8px 0;font-size:.87rem}
+section{padding:76px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;
+gap:24px;margin-bottom:30px}
+.section-head h2{font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.07em;
+line-height:1;margin:8px 0;font-weight:1000}
+.section-head p{max-width:460px;color:var(--muted);margin:0}
+#about .section-head h2{color:var(--blue)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.about-copy{font-size:1.05rem;color:var(--muted)}
+.about-copy strong{color:var(--ink)}
+.pillbox{background:var(--sky);padding:25px;box-shadow:8px 8px 0 var(--lilac)}
+.pillbox h3{margin-top:0}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.pill{background:var(--cream);border-radius:50px;padding:7px 12px;font-size:.83rem}
+#projects{background:var(--yellow)}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
+.project{background:var(--cream);box-shadow:7px 7px 0 var(--blue);
+display:flex;flex-direction:column;min-width:0}
+.project:nth-child(2){background:var(--sky);box-shadow:7px 7px 0 var(--coral)}
+.project:nth-child(3){background:var(--ink);color:var(--cream);box-shadow:7px 7px 0 var(--lilac)}
+.project:nth-child(3) p,.project:nth-child(3) li{color:#e5dfe9}
+.project:nth-child(4){background:var(--lilac);box-shadow:7px 7px 0 var(--coral)}
+.art{height:190px;display:grid;place-items:center;overflow:hidden}
+.art svg{width:100%;height:100%;display:block}
+.project-content{padding:24px;display:flex;flex-direction:column;flex:1}
+.project-top{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.project h3{font-size:1.7rem;line-height:1.05;letter-spacing:-.05em;margin:0;font-weight:1000}
+.tag{font-size:.68rem;font-weight:900;text-transform:uppercase;
+background:var(--yellow);color:var(--ink);padding:6px 9px;border-radius:50px}
+.project p,.project li{font-size:.91rem;color:var(--muted)}
+.project ul{padding-left:19px}
+.project-link{display:inline-block;background:var(--blue);color:white;
+padding:10px 14px;border-radius:50px;font-size:.76rem;font-weight:900;
+text-transform:uppercase;transition:.2s}
+.project:nth-child(3) .project-link{background:var(--yellow);color:var(--ink)}
+.project-actions{margin-top:auto;padding-top:12px}
+#experience{background:var(--sky)}
+.timeline-item{display:grid;grid-template-columns:190px 1fr;gap:25px;
+padding:24px 15px;border-top:1px solid #b8c7f2}
+.timeline-item:nth-child(odd){background:rgba(255,249,237,.65)}
+.date{font-size:.83rem;font-weight:900;color:var(--blue)}
+.timeline h3{font-size:1.15rem;line-height:1.3;margin:0}
+.place{color:var(--muted);font-size:.88rem;margin-top:4px}
+.timeline p{color:var(--muted);margin:10px 0 0}
+.role-stack{margin-top:12px;border-left:3px solid var(--blue);
+padding-left:15px;display:grid;gap:13px}
+.role-entry{display:grid;gap:2px}
+.role-entry span{font-size:.85rem;color:var(--muted)}
+#skills{background:var(--ink);color:var(--cream)}
+#skills .section-head p{color:#d4cbd9}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill-card{background:var(--cream);color:var(--ink);padding:22px;
+box-shadow:5px 5px 0 var(--coral)}
+.skill-card h3{margin:0 0 8px;font-size:1.05rem}
+.skill-card p{margin:0;color:var(--muted);font-size:.9rem}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.edu-card{background:white;padding:25px;box-shadow:5px 5px 0 var(--blue)}
+.edu-card h3{margin:0;font-size:1.3rem}
+.meta{color:var(--blue);font-size:.88rem;font-weight:800;margin-top:7px}
+.edu-card p{color:var(--muted);font-size:.92rem}
+.language-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.language{background:var(--sky);padding:16px}
+.language:nth-child(even){background:var(--lilac)}
+.language strong,.language span{display:block}
+.language span{font-size:.82rem;color:var(--muted)}
+.contact{background:var(--blue);color:var(--cream);padding:38px;
+display:grid;grid-template-columns:1fr .8fr;gap:30px;
+box-shadow:9px 9px 0 var(--coral)}
+.contact .eyebrow{color:var(--yellow)}
+.contact h2{font-size:clamp(2.5rem,6vw,4.5rem);line-height:.98;
+letter-spacing:-.07em;margin:15px 0}
+.contact p{color:#e9eaff}
+.contact-links{display:grid;align-content:center;gap:10px}
+.contact-links a{border:1px solid #7484ff;padding:12px;overflow-wrap:anywhere}
+.contact-links a:hover{background:#2038d7}
+footer{padding:25px 0;display:flex;justify-content:space-between;
+gap:12px;font-size:.8rem;color:var(--muted)}
+@media(max-width:760px){
+ .hero-grid,.about-grid,.edu-grid,.contact{grid-template-columns:1fr}
+ .project-grid{grid-template-columns:1fr}
+ .skills-grid{grid-template-columns:repeat(2,1fr)}
+ .section-head{display:block}
+ .section-head p{margin-top:12px}
+ .timeline-item{grid-template-columns:1fr;gap:7px}
+ .language-row{grid-template-columns:repeat(2,1fr)}
+ .navlinks{gap:10px}.navlinks a{font-size:.7rem}
+ .hero{padding:48px 0}
+}
+@media(max-width:420px){.skills-grid{grid-template-columns:1fr}.profile{margin:0 5px}}
+</style>
+</head>
+<body>
+<header class="wrap">
+<nav>
+<a class="brand" href="#top">FZ<span>.</span></a>
+<div class="navlinks">
+<a href="#about">About</a><a href="#projects">Projects</a>
+<a href="#experience">Experience</a><a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+<main id="top">
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<div class="eyebrow">Computer Science · León, Spain</div>
+<h1>Curious mind.<br><em>Creative coder.</em></h1>
+<p class="lede">I’m Fatima Zahra Oussous, a Computer Science student at the University of León with hands-on experience in IT, web development, cybersecurity projects and collaborative software development.</p>
+<div class="actions">
+<a class="btn" href="#projects">Explore my work ↘</a>
+<a class="btn alt" href="#contact">Get in touch</a>
+</div>
+</div>
+<aside class="profile">
+<div class="monogram">FZ</div>
+<h2>Fatima Zahra Oussous</h2>
+<p>Computer Science student · Aspiring software developer</p>
+<div class="facts">
+<div>✳ Based in León, Spain</div>
+<div>✳ Interested in software, web technologies, cybersecurity and networks</div>
+<div>✳ Open to summer internship opportunities</div>
+</div>
+</aside>
+</div>
+</section>
+<section id="about">
+<div class="wrap">
+<div class="section-head">
+<div><div class="eyebrow">A little about me</div><h2>Building useful things<br>with technology.</h2></div>
+<p>My background combines computer science studies, practical IT experience and project work across software, security and interactive applications.</p>
+</div>
+<div class="about-grid">
+<div class="about-copy">
+<p>I enjoy turning ideas and requirements into <strong>clear, usable digital tools</strong>. Through internships and personal/team projects, I’ve worked on websites, desktop applications, cybersecurity checks and an AI assistant for technical documentation.</p>
+<p>I bring a mix of technical curiosity, structured problem-solving, teamwork and experience organizing information and workflows.</p>
+</div>
+<div class="pillbox"><h3>Areas I’m exploring</h3><div class="pills">
+<span class="pill">Software development</span><span class="pill">Frontend & backend</span>
+<span class="pill">Web applications</span><span class="pill">Cybersecurity</span>
+<span class="pill">Networks & internet services</span><span class="pill">AI / ML</span>
+<span class="pill">Data management</span>
+</div></div>
+</div>
+</div>
+</section>
+<section id="projects">
+<div class="wrap">
+<div class="section-head">
+<div><div class="eyebrow">Selected work</div><h2>Projects with a purpose.</h2></div>
+<p>A selection of projects spanning web development, security, productivity and computer vision.</p>
+</div>
+<div class="project-grid">
+<article class="project">
+<div class="art"><svg viewBox="0 0 600 230" role="img" aria-label="SafeGate cybersecurity illustration">
+<rect width="600" height="230" fill="#ff654f"/><circle cx="500" cy="45" r="90" fill="#ffe66d"/>
+<rect x="35" y="25" width="330" height="180" rx="18" fill="#fff9ed"/>
+<path d="M95 80 L140 62 L185 80 V125 Q140 165 95 125Z" fill="#2d47ff"/>
+<path d="M118 108 L136 125 L164 91" fill="none" stroke="#ffe66d" stroke-width="8" stroke-linecap="round"/>
+<rect x="215" y="80" width="115" height="12" rx="6" fill="#dce6ff"/>
+<rect x="215" y="105" width="90" height="10" rx="5" fill="#e3d7ff"/>
+<text x="390" y="180" font-size="30" font-weight="900" fill="#29202e">SAFE/GATE</text>
+</svg></div>
+<div class="project-content">
+<div class="project-top"><h3>SafeGate</h3><span class="tag">Cybersecurity</span></div>
+<p>A desktop tool that checks URLs and domains for potential warning signs.</p>
+<ul><li>Checks HTTPS/TLS, redirects, DNS and reputation/threat indicators.</li><li>Combines signals to surface phishing, scam and suspicious patterns.</li></ul>
+<div class="project-actions"><a class="project-link" href="https://github.com/FZoussous/SafeGate" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+</div></article>
+<article class="project">
+<div class="art"><svg viewBox="0 0 600 230" role="img" aria-label="Momentum productivity illustration">
+<rect width="600" height="230" fill="#2d47ff"/><path d="M0 190 Q150 100 270 175 T600 50 V230 H0Z" fill="#a58bd4"/>
+<rect x="40" y="25" width="270" height="175" rx="12" fill="#fff9ed"/>
+<text x="68" y="60" font-size="23" font-weight="900" fill="#29202e">TODAY</text>
+<circle cx="76" cy="94" r="9" fill="#ff654f"/><path d="M70 94 L76 100 L84 89" stroke="#fff9ed" stroke-width="3" fill="none"/>
+<rect x="100" y="89" width="170" height="10" rx="5" fill="#dce6ff"/>
+<circle cx="76" cy="130" r="9" fill="#ffe66d"/><rect x="100" y="125" width="145" height="10" rx="5" fill="#dce6ff"/>
+<path d="M370 160 L420 110 L460 135 L525 65" stroke="#ffe66d" stroke-width="9" fill="none" stroke-linecap="round"/>
+<text x="360" y="210" font-size="25" font-weight="900" fill="#fff9ed">MOMENTUM</text>
+</svg></div>
+<div class="project-content">
+<div class="project-top"><h3>Momentum</h3><span class="tag">Productivity</span></div>
+<p>A consistency-focused productivity app designed to adapt planning to a user’s real behavior.</p>
+<ul><li>Uses completed, skipped and abandoned tasks as feedback.</li><li>Considers task size, work patterns and recovery behavior to personalize recommendations.</li></ul>
+<div class="project-actions"><a class="project-link" href="https://github.com/FZoussous/Momentum" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+</div></article>
+<article class="project">
+<div class="art"><svg viewBox="0 0 600 230" role="img" aria-label="Gestura hand tracking illustration">
+<rect width="600" height="230" fill="#e3d7ff"/><circle cx="480" cy="65" r="80" fill="#ffe66d"/>
+<path d="M145 190 Q120 165 140 130 L165 90 Q178 75 190 92 L200 120 L204 55 Q205 38 220 42 Q235 44 233 62 L235 110 L247 48 Q251 30 266 36 Q280 40 274 60 L265 120 L285 74 Q293 55 307 64 Q320 72 310 89 L290 140 L318 115 Q333 105 344 119 Q352 132 338 147 L300 188 Q275 215 245 210Z" fill="#ff654f" stroke="#29202e" stroke-width="5"/>
+<path d="M140 75 Q105 110 130 145 M350 55 Q375 35 395 55" fill="none" stroke="#2d47ff" stroke-width="6" stroke-linecap="round"/>
+<text x="380" y="205" font-size="26" font-weight="900" fill="#29202e">GESTURA</text>
+</svg></div>
+<div class="project-content">
+<div class="project-top"><h3>Gestura</h3><span class="tag">Computer vision</span></div>
+<p>A webcam-based desktop app that recognizes hand movements and translates gestures into interactive controls.</p>
+<ul><li>Includes gesture-controlled trails, objects and visual effects.</li><li>Provides controls to clear and change the scene.</li></ul>
+<div class="project-actions"><a class="project-link" href="https://github.com/FZoussous/Gestura" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+</div></article>
+<article class="project">
+<div class="art"><svg viewBox="0 0 600 230" role="img" aria-label="Nexus Iberia website illustration">
+<rect width="600" height="230" fill="#dce6ff"/><rect x="35" y="22" width="355" height="185" rx="10" fill="#fff9ed"/>
+<rect x="35" y="22" width="355" height="32" rx="10" fill="#29202e"/>
+<circle cx="55" cy="38" r="4" fill="#ff654f"/><circle cx="70" cy="38" r="4" fill="#ffe66d"/>
+<rect x="60" y="78" width="140" height="12" rx="6" fill="#2d47ff"/>
+<rect x="60" y="103" width="190" height="7" rx="3" fill="#dce6ff"/>
+<rect x="60" y="120" width="165" height="7" rx="3" fill="#dce6ff"/>
+<rect x="60" y="145" width="90" height="28" rx="14" fill="#ff654f"/>
+<rect x="275" y="78" width="90" height="95" rx="8" fill="#ffe66d"/>
+<path d="M290 145 L315 115 L338 135 L355 98" fill="none" stroke="#2d47ff" stroke-width="5"/>
+<text x="415" y="110" font-size="25" font-weight="900" fill="#29202e">NEXUS</text>
+<text x="415" y="137" font-size="13" font-weight="700" fill="#29202e">WEB / BUILD</text>
+</svg></div>
+<div class="project-content">
+<div class="project-top"><h3>Nexus Iberia Website</h3><span class="tag">Web development</span></div>
+<p>Contributed to the initial version of the company website during an IT internship.</p>
+<ul><li>Translated business needs into a functional web solution.</li><li>Supported core business-facing functionality and maintainable user flows.</li></ul>
+<div class="project-actions"><a class="project-link" href="https://github.com/FZoussous/nexus-iberia-website" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
+</div></article>
+</div>
+</div>
+</section>
+<section id="experience">
+<div class="wrap">
+<div class="section-head">
+<div><div class="eyebrow">Experience & involvement</div><h2>Learning by doing.</h2></div>
+<p>Professional experience, student representation and team-based activities.</p>
+</div>
+<div class="timeline">
+<div class="timeline-item"><div class="date">Sep 2026 – Jan 2027</div><div><h3>Frontend & Backend Developer · ARSOFT × Universidad de León AI Automotive Challenge</h3><div class="place">León, Spain</div><p>Contributing to an AI assistant for automotive technical documentation, designed to retrieve relevant information and answer technical questions with evidence and source references.</p></div></div>
+<div class="timeline-item"><div class="date">Jul 2026 – Aug 2026</div><div><h3>IT Intern · Nexus Iberia</h3><div class="place">Rabat, Morocco</div><p>Contributed to the company’s initial website; supported digital tools and resources; prepared reports and spreadsheets in Microsoft Excel; assisted with data management and digital documentation.</p></div></div>
+<div class="timeline-item"><div class="date">Nov 2025 – 2026</div><div><h3>Team Member · Department Council</h3><div class="place">Mechanical, Computer and Aerospace Engineering · León, Spain</div><p>Participation in department-level student representation.</p></div></div>
+<div class="timeline-item"><div class="date">Jun 2025 – 2026</div><div><h3>Team Member · Asociación de Desarrollo de Software (ADS)</h3><div class="place">León, Spain</div><p>Student involvement in a software development association.</p></div></div>
+<div class="timeline-item"><div class="date">Oct 2023 – Sep 2024</div><div><h3>Enactus Club · FSTM</h3><div class="place">Mohammedia, Morocco</div><div class="role-stack"><div class="role-entry"><strong>Human Resources Coordinator</strong><span>May 2024 – Sep 2024</span></div><div class="role-entry"><strong>Sub-Cell Leader · Motivation & Evaluation</strong><span>Oct 2023 – May 2024</span></div></div></div></div>
+<div class="timeline-item"><div class="date">Jun 2023 – Jul 2024</div><div><h3>Administrative Intern · Academy Alhambra</h3><div class="place">Rabat, Morocco</div><p>Prepared reports and performance metrics using Excel and Google Sheets, organized schedules and meeting/event logistics, and supported the move toward digital document workflows.</p></div></div>
+</div>
+</div>
+</section>
+<section id="skills">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">Technical toolkit</div><h2>Skills I bring.</h2></div><p>Technical foundations and tools developed through study and project work.</p></div>
+<div class="skills-grid">
+<div class="skill-card"><h3>Programming</h3><p>Java · C · C++ · Python · Shell</p></div>
+<div class="skill-card"><h3>Tools & environments</h3><p>Docker · Virtual Machines · Git · VS Code · Eclipse</p></div>
+<div class="skill-card"><h3>Other tools</h3><p>CLIPS · Microsoft Excel · Google Forms</p></div>
+<div class="skill-card"><h3>Core areas</h3><p>Software development · Web development · Cybersecurity · Data management</p></div>
+<div class="skill-card"><h3>Academic foundations</h3><p>Data structures & algorithms · OOP · Software engineering · Distributed systems · Internet services · Network security · AI/ML</p></div>
+<div class="skill-card"><h3>Ways of working</h3><p>Project planning · Problem solving · Teamwork · Digital documentation</p></div>
+</div>
+</div>
+</section>
+<section id="education">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">Education</div><h2>My learning path.</h2></div></div>
+<div class="edu-grid">
+<article class="edu-card"><h3>Universidad de León</h3><div class="meta">Bachelor’s degree in Computer Science · 2024–Present</div><p>León, Spain. Coursework includes programming, software development, computer architecture, AI/ML, cybersecurity, web and distributed systems, information systems, knowledge engineering and project management.</p></article>
+<article class="edu-card"><h3>Faculty of Science and Technologies</h3><div class="meta">Bachelor’s degree in BCG · 2023–2024</div><p>Mohammedia, Morocco. Foundational studies in biology, chemistry and geology.</p></article>
+</div>
+</div>
+</section>
+<section id="languages">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">Languages</div><h2>Comfortable across cultures.</h2></div></div>
+<div class="language-row">
+<div class="language"><strong>Arabic</strong><span>Native</span></div>
+<div class="language"><strong>French</strong><span>Proficient</span></div>
+<div class="language"><strong>English</strong><span>Proficient</span></div>
+<div class="language"><strong>Spanish</strong><span>Professional</span></div>
+<div class="language"><strong>Chinese</strong><span>HSK 1</span></div>
+</div>
+</div>
+</section>
+<section id="contact">
+<div class="wrap">
+<div class="contact">
+<div><div class="eyebrow">Let’s connect</div><h2>Have an opportunity<br>in mind?</h2><p>I’m interested in summer internship opportunities where I can contribute, learn from a team and grow as a developer.</p><a class="btn" href="mailto:fousso00@estudinates.unileon.es">Email me ↗</a></div>
+<div class="contact-links">
+<a href="mailto:fousso00@estudinates.unileon.es">✉ &nbsp; fousso00@estudinates.unileon.es</a>
+<a href="https://www.linkedin.com/in/f-zo/" target="_blank" rel="noopener noreferrer">↗ &nbsp; LinkedIn: f-zo</a>
+<a href="https://github.com/FZoussous" target="_blank" rel="noopener noreferrer">↗ &nbsp; GitHub: FZoussous</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="wrap"><span>© 2026 Fatima Zahra Oussous</span><span>A little curiosity. A lot of building.</span></footer>
+</body>
+</html>
